@@ -1,0 +1,23 @@
+- apt_repository:
+    repo: ppa:certbot/certbot
+- name: Install Mosquito pacjages
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+  become: yes
+  vars:
+    packages:
+    - mosquitto
+    - mosquitto-clients
+    - certbot
+
+- name: Create letsencrypt certificate kekskurse.ddns.net
+  shell: certbot certonly --standalone --standalone-supported-challenges http-01 -d kekskurse.ddns.net
+  args:
+      creates: /etc/letsencrypt/live/kekskurse.ddns.net
+
+- name: Add letsencrypt cronjob for cert renewal
+  cron:
+    name: letsencrypt_renewal
+    special_time: weekly
+    job: certbot renew --noninteractive --post-hook "systemctl restart mosquitto"
