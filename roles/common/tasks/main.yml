@@ -6,3 +6,8 @@
   vars:
     packages:
     - zsh
+- name: Download grml config
+  get_url:
+    url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+    dest: ~/.zshrc
+    mode: 0660
