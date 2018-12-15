@@ -6,6 +6,7 @@
   vars:
     packages:
     - zsh
+    - vim
 - name: Download grml config
   get_url:
     url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
