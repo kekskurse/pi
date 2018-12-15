@@ -33,3 +33,4 @@
   become: yes
 
 - service: name=mosquitto state=restarted enabled=yes
+  become: yes
