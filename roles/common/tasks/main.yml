@@ -1,0 +1,8 @@
+- name: Install a list of packages
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+  vars:
+    packages:
+    - zsh
+    - foo-tools
