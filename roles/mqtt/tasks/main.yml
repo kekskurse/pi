@@ -13,8 +13,10 @@
   shell: certbot certonly --standalone  --agree-tos -m letsencrqpt@kekskurse.de -d kekskurse.ddns.net
   args:
       creates: /etc/letsencrypt/live/kekskurse.ddns.net
+  become: yes
 
 - name: Add letsencrypt cronjob for cert renewal
+  become: yes
   cron:
     name: letsencrypt_renewal
     special_time: weekly
