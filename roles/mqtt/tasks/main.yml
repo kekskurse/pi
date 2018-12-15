@@ -30,4 +30,7 @@
 - copy:
     src: "{{ role_path }}/files/mosquito_config.conf"
     dest: /etc/mosquitto/conf.d/default.conf
-    notify: restart mosquitto
+    register: mqttConfigChanged
+
+- service: name=mosquitto state=restarted enabled=yes
+  when: mqttConfigChanged.changed
