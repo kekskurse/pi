@@ -3,3 +3,4 @@
   hosts: pi
   roles:
     - common
+    - mqtt
