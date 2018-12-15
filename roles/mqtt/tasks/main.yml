@@ -31,6 +31,7 @@
     src: "{{ role_path }}/files/mosquito_config.conf"
     dest: /etc/mosquitto/conf.d/default.conf
   become: yes
+  register: ConfigChanged
 
 - service: name=mosquitto state=restarted enabled=yes
   become: yes
