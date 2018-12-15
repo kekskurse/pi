@@ -15,9 +15,19 @@
       creates: /etc/letsencrypt/live/kekskurse.ddns.net
   become: yes
 
+- name: Create file
+  command: touch /etc/mosquitto/passwd
+  args:
+    creates: /etc/mosquitto/passwd
+
 - name: Add letsencrypt cronjob for cert renewal
   become: yes
   cron:
     name: letsencrypt_renewal
     special_time: weekly
     job: certbot renew --noninteractive --post-hook "systemctl restart mosquitto"
+
+- copy:
+    src: "{{ role_path }}/files/mosquito_config.conf"
+    dest: /etc/mosquitto/conf.d/default.conf
+    notify: restart mosquitto
