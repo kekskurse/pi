@@ -10,6 +10,8 @@ fi
 
 if [ -e ~/.ssh/id_rsa ]
 then
+  echo "SSH Key erzeugen"
+else
     ssh-keygen
 fi
 
