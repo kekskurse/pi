@@ -35,3 +35,4 @@
 
 - service: name=mosquitto state=restarted enabled=yes
   become: yes
+  when: ConfigChanged.changed
