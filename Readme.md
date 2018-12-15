@@ -19,6 +19,8 @@ ansible-playbook -i hosts.ini main.yml
 # Roles
 
 ## MQTT - mosquito
+The Role install Mosquitto as MQTT-Server. It is onlz avalible via SSL with a Letsencrypt SSL-Cert based on the Domain (and mail) varieable.
+
 To create a MQTT User change the following command:
 ```
 sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
