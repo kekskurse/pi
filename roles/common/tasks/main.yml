@@ -2,7 +2,7 @@
   apt:
     name: "{{ packages }}"
     update_cache: yes
+    become: yes
   vars:
     packages:
     - zsh
-    - foo-tools
