@@ -1,6 +1,9 @@
 ---
 - name: Pi Ansible Setup
   hosts: pi
+  vars:
+    domain: kekskurse.ddns.net
+    mail: pi@kekskurse.de
   roles:
     - common
     - mqtt

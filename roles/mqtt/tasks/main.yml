@@ -10,9 +10,9 @@
     - certbot
 
 - name: Create letsencrypt certificate kekskurse.ddns.net
-  shell: certbot certonly --standalone  --agree-tos -m letsencrqpt@kekskurse.de -d kekskurse.ddns.net
+  shell: certbot certonly --standalone  --agree-tos -m {{ mail }} -d {{ domain }}
   args:
-      creates: /etc/letsencrypt/live/kekskurse.ddns.net
+      creates: /etc/letsencrypt/live/{{ domain }}
   become: yes
 
 - name: Create file
@@ -27,12 +27,12 @@
     special_time: weekly
     job: certbot renew --noninteractive --post-hook "systemctl restart mosquitto"
 
-- name: Config Mosquito config
-  copy:
-    src: "{{ role_path }}/files/mosquito_config.conf"
+- template:
+    src: templates/mosquito_config.j2
     dest: /etc/mosquitto/conf.d/default.conf
-  become: yes
-  register: ConfigChanged
+    mode: 0644
+    become: yes
+    register: ConfigChanged
 
 - name: Restart mosquitto Service
   service: name=mosquitto state=restarted enabled=yes
