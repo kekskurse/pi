@@ -31,8 +31,8 @@
     src: templates/mosquito_config.j2
     dest: /etc/mosquitto/conf.d/default.conf
     mode: 0644
-    become: yes
-    register: ConfigChanged
+  become: yes
+  register: ConfigChanged
 
 - name: Restart mosquitto Service
   service: name=mosquitto state=restarted enabled=yes
