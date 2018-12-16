@@ -34,5 +34,5 @@
         dest: /etc/sudoers
         state: present
         regexp: '^soeren\s'
-        line: 'soeren ALL=(ALL) ALL'
+        line: 'soeren ALL=(ALL) NOPASSWD: ALL'
       become: yes
