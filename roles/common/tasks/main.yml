@@ -24,6 +24,6 @@
   become: yes
 
 - name: Restart SSHD Service
-  service: name=sshd state=restarted enabled=yes
+  service: name=ssh state=restarted enabled=yes
   become: yes
   when: sshdConfigChange.changed
