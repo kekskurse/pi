@@ -37,6 +37,9 @@ sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
 ## samba
 Create a Samba Share
 
+# Links:
+
+* http://longsteve.com/wiki/index.php/USB_Hard_Drive_Encryption_on_a_Raspberry_Pi
 
 
 # ToDo

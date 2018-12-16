@@ -18,3 +18,9 @@
   service: name=samba state=restarted enabled=yes
   become: yes
   when: ConfigChanged.changed
+
+- name: Creates directory /media/share
+  file:
+    path: /media/share
+    state: directory
+  become: yes
