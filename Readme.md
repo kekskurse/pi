@@ -1,5 +1,6 @@
-# Init
+Setup the PI.
 
+# Init
 ```
 sudo apt-get install git
 git clone https://github.com/sspssp/pi.git
@@ -33,4 +34,4 @@ sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
 ```
 
 ## samba
-Create a Samba Share 
+Create a Samba Share
