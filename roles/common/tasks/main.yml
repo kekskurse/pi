@@ -10,8 +10,9 @@
 - name: Download grml config
   get_url:
     url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-    dest: ~/.zshrc
+    dest: /etc/zsh/zshrc
     mode: 0660
+  become: true
 - name: Change user pi to zsh
   user:
     name: pi
