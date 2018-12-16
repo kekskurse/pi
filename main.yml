@@ -31,7 +31,7 @@
       become: true
     - name: Make user soeren root
       lineinfile:
-        path: /etc/sudoers
+        dest: /etc/sudoers
         state: present
         regexp: '^soeren\s'
         line: 'soeren ALL=(ALL) ALL'
