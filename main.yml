@@ -13,8 +13,10 @@
         name: soeren
         shell: /bin/zsh
         append: yes
+      become: yes
     - name: Set authorized keys taken from url
       authorized_key:
         user: soeren
         state: present
         key: https://github.com/sspssp.keys
+      become: yes
