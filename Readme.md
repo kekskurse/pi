@@ -1,4 +1,4 @@
-Setup the PI.
+Setup the my PI at Home.
 
 # Init
 ```
@@ -26,12 +26,18 @@ Make some Basic changes to the pi. Install the following commands:
 * Disabled PasswordAuthentication
 
 ## MQTT - mosquito
-The Role install Mosquitto as MQTT-Server. It is onlz avalible via SSL with a Letsencrypt SSL-Cert based on the Domain (and mail) varieable.
+The Role install Mosquitto as MQTT-Server. It is only avalible via SSL with a Letsencrypt SSL-Cert based on the Domain (and mail) varieable.
 
 To create a MQTT User change the following command:
+
 ```
 sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
 ```
 
 ## samba
 Create a Samba Share
+
+
+
+# ToDo
+* Additional Firewall on pi

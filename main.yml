@@ -29,3 +29,8 @@
         owner: soeren
         group: soeren
       become: true
+    - lineinfile:
+       path: /etc/sudoers
+       state: present
+       regexp: '^soeren\s'
+       line: 'soeren ALL=(ALL) ALL'
