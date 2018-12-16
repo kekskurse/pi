@@ -17,7 +17,6 @@ ansible-playbook -i hosts.ini main.yml
 
 
 # Roles
-
 ## Common
 Make some Basic changes to the pi. Install the following commands:
 
@@ -32,3 +31,6 @@ To create a MQTT User change the following command:
 ```
 sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
 ```
+
+## samba
+Create a Samba Share 
