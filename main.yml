@@ -7,6 +7,7 @@
   roles:
     - common
     - mqtt
+    - samba
   tasks:
     - name: Create the User soeren
       user:
