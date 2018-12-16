@@ -11,7 +11,7 @@
   get_url:
     url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
     dest: /etc/zsh/zshrc
-    mode: 0660
+    mode: 0666
   become: true
 - name: Change user pi to zsh
   user:
