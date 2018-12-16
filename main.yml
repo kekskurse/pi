@@ -29,8 +29,9 @@
         owner: soeren
         group: soeren
       become: true
-    - lineinfile:
-       path: /etc/sudoers
-       state: present
-       regexp: '^soeren\s'
-       line: 'soeren ALL=(ALL) ALL'
+    - name: Make user soeren root
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^soeren\s'
+        line: 'soeren ALL=(ALL) ALL'
