@@ -14,8 +14,8 @@
   become: yes
   register: ConfigChanged
 
-- name: Restart samba Service
-  service: name=samba state=restarted enabled=yes
+- name: Restart smbd Service
+  service: name=smbd state=restarted enabled=yes
   become: yes
   when: ConfigChanged.changed
 
