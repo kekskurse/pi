@@ -1,4 +1,4 @@
-- name: Install Mosquito packages
+- name: Install Samba packages
   apt:
     name: "{{ packages }}"
     update_cache: no
@@ -6,3 +6,15 @@
   vars:
     packages:
     - samba
+- name: Copy Samba Config
+  template:
+    src: templates/samba.conf.j2
+    dest: /etc/samba/smb.conf
+    mode: 0644
+  become: yes
+  register: ConfigChanged
+
+- name: Restart samba Service
+  service: name=samba state=restarted enabled=yes
+  become: yes
+  when: ConfigChanged.changed
