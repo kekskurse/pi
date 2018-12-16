@@ -20,5 +20,10 @@
   become: yes
 - name: Disable password login
   lineinfile: dest=/etc/ssh/sshd_config regexp="^(#\s*)?PasswordAuthentication " line="PasswordAuthentication no"
-  notify: restart sshd
+  register: sshdConfigChange
   become: yes
+
+- name: Restart SSHD Service
+  service: name=sshd state=restarted enabled=yes
+  become: yes
+  when: sshdConfigChange.changed
