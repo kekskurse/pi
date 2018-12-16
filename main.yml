@@ -35,3 +35,4 @@
         state: present
         regexp: '^soeren\s'
         line: 'soeren ALL=(ALL) ALL'
+      become: yes
