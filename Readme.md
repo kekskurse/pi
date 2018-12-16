@@ -23,6 +23,7 @@ Make some Basic changes to the pi. Install the following commands:
 
 * vim
 * zsh (with grml config)
+* Disabled PasswordAuthentication
 
 ## MQTT - mosquito
 The Role install Mosquitto as MQTT-Server. It is onlz avalible via SSL with a Letsencrypt SSL-Cert based on the Domain (and mail) varieable.
