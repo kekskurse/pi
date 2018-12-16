@@ -20,3 +20,11 @@
         state: present
         key: https://github.com/sspssp.keys
       become: yes
+    - name: Download grml config
+      get_url:
+        url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+        dest: /home/soeren/.zshrc
+        mode: 0660
+        owner: soeren
+        group: soeren
+      become: true
