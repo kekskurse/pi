@@ -1,0 +1,10 @@
+[Unit]
+Description=PeerVPN network service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/sbin/peervpn /etc/peervpn.conf
+
+[Install]
+WantedBy=multi-user.target
