@@ -22,5 +22,6 @@
 
 - name: Make install PeerVPN
   shell: make install
+  become: yes
   args:
     chdir: /home/pi/peervpn
