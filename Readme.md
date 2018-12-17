@@ -35,7 +35,11 @@ sudo mosquitto_passwd -c /etc/mosquitto/passwd sammy
 ```
 
 ## samba
-Create a Samba Share
+Create a Samba Share.
+
+You need to create a samba user on your own. It will mount /media/share as Samba Share.
+
+## peervpn
 
 # Links:
 
