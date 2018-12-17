@@ -10,18 +10,26 @@
     - git
     - gcc
 
+- name: Check if PeerVPN exists
+  stat: 
+    path: /usr/local/sbin/peervpn
+  register: peervpn_exists
+
 - git:
     repo: https://github.com/Nayar/peervpn
     dest: /home/pi/peervpn
     accept_hostkey: yes
+  when: shorewall_rules.stat.exists == false
 
 - name: Make PeerVPN
   shell: make
   args:
     chdir: /home/pi/peervpn
+  when: shorewall_rules.stat.exists == false
 
 - name: Make install PeerVPN
   shell: make install
   become: yes
   args:
     chdir: /home/pi/peervpn
+  when: shorewall_rules.stat.exists == false
