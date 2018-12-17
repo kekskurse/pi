@@ -41,6 +41,10 @@ You need to create a samba user on your own. It will mount /media/share as Samba
 
 ## peervpn
 
+Install Peervpn.
+
+You need to create a PeerVPN Config on your own to run peervpn.
+
 # Links:
 
 * http://longsteve.com/wiki/index.php/USB_Hard_Drive_Encryption_on_a_Raspberry_Pi
