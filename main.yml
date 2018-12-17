@@ -8,6 +8,7 @@
     - common
     - mqtt
     - samba
+    - peervpn
   tasks:
     - name: Create the User soeren
       user:
