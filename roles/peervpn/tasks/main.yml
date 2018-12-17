@@ -1,0 +1,22 @@
+- name: Install Mosquito packages
+  apt:
+    name: "{{ packages }}"
+    update_cache: no
+  become: yes
+  vars:
+    packages:
+    - libssl-dev
+    - make
+    - git
+    - gcc
+
+- git:
+    repo: https://github.com/Nayar/peervpn
+    dest: /home/pi/peervpn
+    accept_hostkey: yes
+
+- name: Make PeerVPN
+  shell: make
+
+- name: Make install PeerVPN
+  shell: make install
