@@ -45,6 +45,14 @@ Install Peervpn.
 
 You need to create a PeerVPN Config on your own to run peervpn.
 
+## telegraf
+
+Install telegraf
+
+you need to config it on your own.
+
+https://www.howtoforge.com/tutorial/how-to-install-tig-stack-telegraf-influxdb-and-grafana-on-ubuntu-1804/
+
 # Links:
 
 * http://longsteve.com/wiki/index.php/USB_Hard_Drive_Encryption_on_a_Raspberry_Pi

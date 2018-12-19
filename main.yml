@@ -9,6 +9,7 @@
     - mqtt
     - samba
     - peervpn
+    - telegraf
   tasks:
     - name: Create the User soeren
       user:
