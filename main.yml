@@ -6,8 +6,6 @@
     mail: pi@kekskurse.de
   roles:
     - common
-    - mqtt
-    - samba
     - peervpn
   tasks:
     - name: Create the User soeren
